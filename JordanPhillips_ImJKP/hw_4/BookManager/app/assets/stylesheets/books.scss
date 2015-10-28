@@ -1,3 +1,16 @@
 // Place all the styles related to the Books controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+input::-webkit-input-placeholder {
+	  font-style:italic;
+}
+input::-moz-placeholder {
+  font-style:italic;
+}
+input:-moz-placeholder {   /* Older versions of Firefox */
+  font-style:italic;
+}
+input:-ms-input-placeholder { 
+  font-style:italic;
+}
