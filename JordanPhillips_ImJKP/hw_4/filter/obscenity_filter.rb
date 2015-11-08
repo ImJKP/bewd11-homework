@@ -18,4 +18,4 @@ def filter(string,blacklist)
   return string
 end
 
-puts filter("Hebads a bad man evil face!",blacklist)
+# puts filter("Hebads a bad man evil face!",blacklist)

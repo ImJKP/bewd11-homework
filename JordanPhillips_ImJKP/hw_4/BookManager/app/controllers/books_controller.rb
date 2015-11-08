@@ -7,11 +7,35 @@ class BooksController < ApplicationController
   end
 
   def edit
+    @book = Book.find(params[:id])
     render "edit"
   end
 
   def create
-    Book.create(book_params)
+    book = Book.new(book_params)
+      if book.valid?
+        book.save
+      redirect "/books"
+    else
+      flash[:error] = "Whoops, you're missing an author or title. Book not saved."
+      redirect "/books"
+    end
+  end
+  
+  def update
+    book = Book.find(params[:id])
+    if book.valid?
+      book.update_attributes(book_params)
+      redirect_to "/"
+    else
+      flash[:error] = "Whoops, you're missing an author or title. Book not saved."
+      redirect_to "/"
+    end
+  end
+
+  def destroy
+    book = Book.find(params[:id])
+    book.delete
     redirect "/books"
   end
 

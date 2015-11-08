@@ -1,0 +1,19 @@
+<h1> Stores for <em><%= Book.find(params[:book_id]).title %></em></h1>
+<table>
+<tr><td>Name</td><td>Address</td></tr>
+  <% @stores.each do |store| %>
+  <tr>
+  <td><%= store.name %></td>
+  <td><%= store.address %></td>
+  </tr>
+  <% end %>
+</table>
+
+<h2>Add a Store</h2>
+<%= form_for(@store, url: book_stores_path, method: "POST") do |f| %>
+<%= f.text_field :name, :placeholder => "Store Name" %>
+<%= f.text_field :address, :placeholder => "Address" %>
+<button>Submit</button>
+<% end %>
+
+<button><%= link_to "Back", root_path %></button>

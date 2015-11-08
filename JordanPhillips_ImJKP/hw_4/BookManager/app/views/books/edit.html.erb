@@ -1,0 +1,36 @@
+<div class="container well margin-top-20 small-container">
+  <%= form_for(@book, method: "PUT") do |f| %>
+	<div>
+		<a href="/"><< Go Back</a>
+	</div>
+	<div class="bold margin-top-20">
+		Title
+	</div>
+	<div class="margin-top-20">
+		<%= f.text_field :title, :class => "form-control" %>
+	</div>
+	<div class="bold margin-top-20">
+		Author
+	</div>
+	<div class="margin-top-20">
+		<%= f.text_field :author, :class => "form-control" %>
+	</div>
+	<div class="bold margin-top-20">
+		Release Date
+	</div>
+	<div class="margin-top-20">
+		<%= f.text_field :release_date, :class => "form-control" %>
+	</div>
+	<div class="bold margin-top-20">
+		Cover Image
+	</div>
+	<div class="margin-top-20">
+		<%= f.text_field :cover, :class => "form-control" %>
+	</div>
+	<div class="margin-top-20">
+		<a href="/" class="btn btn-default">Cancel</a>
+		<button type="submit" class="btn btn-success">Submit Edits</button>
+	</div>
+	<%end%>
+</div>
+
