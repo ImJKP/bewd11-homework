@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>We added a new book, <%= @user.name %>!</h1>
+    <p><%= @book.title %> by <%= @book.author %> has been added to the library. <%= link_to "See what stores it is available in.", book_stores_path, method: "GET" %></p>
+  </body>
+</html>

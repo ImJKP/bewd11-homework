@@ -15,6 +15,9 @@ class BooksController < ApplicationController
     book = Book.new(book_params)
       if book.valid?
         book.save
+        User.all.each do |user|
+          UserMailer.new_book(user,book).deliver_now
+        end
       redirect "/books"
     else
       flash[:error] = "Whoops, you're missing an author or title. Book not saved."
